@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		C7AD4A072520C2CF005DB96B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AD4A052520C2CF005DB96B /* Main.storyboard */; };
 		C7AD4A092520C2D0005DB96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AD4A082520C2D0005DB96B /* Assets.xcassets */; };
 		C7AD4A0C2520C2D0005DB96B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AD4A0A2520C2D0005DB96B /* LaunchScreen.storyboard */; };
+		C7C966592520C5A3006334F1 /* ShutterButton in Frameworks */ = {isa = PBXBuildFile; productRef = C7C966582520C5A3006334F1 /* ShutterButton */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7C966592520C5A3006334F1 /* ShutterButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +42,7 @@
 			children = (
 				C7AD49FE2520C2CF005DB96B /* ShutterButtonDemo */,
 				C7AD49FD2520C2CE005DB96B /* Products */,
+				C7C966572520C5A3006334F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +67,13 @@
 			path = ShutterButtonDemo;
 			sourceTree = "<group>";
 		};
+		C7C966572520C5A3006334F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,6 +90,9 @@
 			dependencies = (
 			);
 			name = ShutterButtonDemo;
+			packageProductDependencies = (
+				C7C966582520C5A3006334F1 /* ShutterButton */,
+			);
 			productName = ShutterButtonDemo;
 			productReference = C7AD49FC2520C2CE005DB96B /* ShutterButtonDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -337,6 +350,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C7C966582520C5A3006334F1 /* ShutterButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ShutterButton;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C7AD49F42520C2CE005DB96B /* Project object */;
 }
