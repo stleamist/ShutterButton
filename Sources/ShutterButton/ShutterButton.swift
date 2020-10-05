@@ -26,8 +26,6 @@ public class ShutterButton: UIControl {
     private let ringLayer = CAShapeLayer()
     private let innerLayer = CAShapeLayer()
     
-    private let feedbackGenerator = UISelectionFeedbackGenerator()
-    
     public override var intrinsicContentSize: CGSize {
         return CGSize(width: buttonLength, height: buttonLength)
     }
@@ -77,7 +75,10 @@ public class ShutterButton: UIControl {
         self.addTarget(self, action: #selector(toggleRecordingState), for: .touchDown)
         self.addTarget(self, action: #selector(addPressedEffect), for: .touchDown)
         self.addTarget(self, action: #selector(removePressedEffect), for: [.touchUpInside, .touchUpOutside])
+        
+        #if os(iOS)
         self.addTarget(self, action: #selector(triggerFeedback), for: [.touchDown, .touchUpInside, .touchUpOutside, .touchDragEnter, .touchDragExit])
+        #endif
     }
     
     private func setupFrameSize() {
@@ -138,7 +139,15 @@ public class ShutterButton: UIControl {
         CATransaction.commit()
     }
     
+    #if os(iOS)
+    
+    // MARK: Feedback
+    
+    private let feedbackGenerator = UISelectionFeedbackGenerator()
+    
     @objc private func triggerFeedback() {
         feedbackGenerator.selectionChanged()
     }
+    
+    #endif
 }
