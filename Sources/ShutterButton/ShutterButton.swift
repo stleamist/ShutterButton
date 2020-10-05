@@ -49,6 +49,7 @@ public class ShutterButton: UIControl {
         setupInnerLayer()
         
         setupActions()
+        setupFrameSize()
         setupCHCRPriorities()
     }
     
@@ -77,6 +78,10 @@ public class ShutterButton: UIControl {
         self.addTarget(self, action: #selector(addPressedEffect), for: .touchDown)
         self.addTarget(self, action: #selector(removePressedEffect), for: [.touchUpInside, .touchUpOutside])
         self.addTarget(self, action: #selector(triggerFeedback), for: [.touchDown, .touchUpInside, .touchUpOutside, .touchDragEnter, .touchDragExit])
+    }
+    
+    private func setupFrameSize() {
+        self.frame.size = self.intrinsicContentSize
     }
     
     private func setupCHCRPriorities() {
